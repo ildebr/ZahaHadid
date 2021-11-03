@@ -1,0 +1,456 @@
+*, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+$padd-s:15px;
+$padd-m: 30px;
+$light-text: #666;
+$max-w: 1200px;
+
+body *{
+	font-family: 'Roboto', sans-serif;
+}
+
+h1.main-title, .logo-link, .price,h2.title{
+	font-weight: 700;
+
+}
+.navbar{
+	width: 100%;
+	padding: 22px $padd-s;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-attachment: scroll;
+	font-weight: 900;
+	background-color: white;
+
+	.navigation-links{
+		display: none;
+	}
+}
+
+@media only screen and(min-width: 788px){
+	.navbar{
+		padding-right:$padd-m; 
+		padding-left:$padd-m;
+	}
+}
+
+@media only screen and(min-width: 989px){
+	.navbar{
+		.navbar-inside{
+			display: flex;
+		justify-content: space-between;
+		}
+
+		.navigation-links{
+			display: block;
+		
+			a{
+				text-decoration: none;
+				color: black;
+				text-transform: uppercase;
+				margin-left: 1rem;
+
+				&:first-of-type{
+					margin-left: 0;
+				}
+
+			}
+		}
+		} 
+}
+
+header{
+	height: 700px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: url(../img/centro-cultural-haydar-aliyev-zaha-hadid.jpg);
+	background-position: center;
+	background-size: cover;
+	background-color: #888;
+	color: white;
+	padding-right: $padd-s;
+	padding-left: $padd-s;
+
+	h1.main-title{
+		font-size: 3.4rem;
+		text-align: center;
+		margin-bottom: 40px;
+	}	
+	
+}
+
+div.shadow{
+	position: absolute;
+    inset: 0% 0% auto auto;
+    width: 100vw;
+    height: 714px;
+    /* -webkit-box-align: center; */
+    align-items: center;
+    background-color: #f1f1f1;
+    z-index: -1;
+}
+
+.cta{
+		font-size: 1.1rem;
+		padding: 2rem 2rem;
+		text-transform: uppercase;
+		box-shadow: none;
+		background-color: white;
+		border: none;
+		border: 1px solid rgb(235, 237, 238);
+		text-decoration: none;
+		color: black;
+	}
+
+
+@media only screen and(min-width: 788px){
+	header{
+		h1.main-title{
+			font-size: 4.5rem;
+		}
+	}
+}
+
+/* a[href^="https"] */
+
+
+main{
+	[class^="group"]{
+		padding-left: $padd-s;
+		padding-right: $padd-s;
+ 	}
+
+	/*padding-left: $padd-s;
+	padding-right: $padd-s;*/
+	padding-top: 30px;
+
+	.cta{
+		width: 100%;
+		display: block;
+		display: flex;
+		justify-content: space-between;
+		margin: 3.5rem 0;
+
+	}
+
+	h3.subtitle{
+		font-size: 1.4rem;
+		font-weight: 100;
+		margin: 1rem 0;
+	}
+
+	.section-content p{
+		color: $light-text;
+	}
+}
+
+.title{
+	font-weight: 100;
+	font-size: 2.2rem;
+	padding-top: 75px;
+	padding-bottom: 40px;
+	padding-left: $padd-s;
+	padding-right: $padd-s;
+}
+
+@media only screen and(min-width: 788px){
+
+	main{
+		[class^="group"],h2.title{
+			padding-left: $padd-m;
+			padding-right: $padd-m;
+ 		}
+		/*padding-left: $padd-m;
+		padding-right: $padd-m;*/
+
+		.cta{
+			grid-column:1/-1;
+		}
+
+	}
+}
+@media only screen and(min-width: 989px){
+	main>*, h2{
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and(min-width: 1200px){
+	main{
+		[class^="group"], h2.title{
+			padding-left: 0;
+			padding-right: 0;
+ 		}
+
+	}
+}
+
+section.group1{
+
+	article{
+		margin-bottom: 2rem;
+	}
+
+	img.artimg{
+	height: 350px;
+	object-fit: cover;
+	object-position: center;
+    width: 100%;
+}
+}
+
+section.spacing{
+	max-width: 100%;
+	height: 300px;
+	background-color: blue;
+	margin: 4rem 0;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	div:nth-of-type(even){
+			background-color: red;
+		}
+}
+
+@media only screen and(min-width: 480px){
+	section.spacing{
+		grid-template-columns: repeat(3,1fr);
+
+	}
+}
+
+@media only screen and(min-width: 748px){
+	section.group1{
+		img.artimg.second{
+		object-fit: contain;
+    	object-position: left;
+	}
+	}
+	section.spacing{
+		grid-template-columns: repeat(6,1fr);
+		height: 150px;
+	}
+}
+
+@media only screen and(min-width: 989px){
+	section.group1{
+		img.artimg{
+			height: 500px;
+
+			&.second{
+				object-position: top;
+			}
+
+		}
+
+
+	}
+}
+
+@media only screen and(min-width: 788px){
+	section.group1{
+		.section-content{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			h3.subtitle{
+				font-size: 1.6rem;
+			}
+
+			&>*{
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}
+
+@media only screen and(min-width: 989px){
+	.group1{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1rem;
+
+		div.section-content{
+			grid-column: 1/-1;
+		}
+
+		.cta{
+			grid-column:2/3;
+		}
+	}
+
+	/*section.spacing{
+		max-width: 100%;
+		height: 200px;
+		background-color: blue;
+		margin: 4rem 0;
+
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+
+		div:nth-of-type(even){
+			background-color: red;
+		}
+	}*/
+
+}
+
+div.image-wrap{
+	a{
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: 1;
+	}
+
+	div.img-placement{
+		background-color: pink;
+		height: 360px;
+		width: 100%;
+	}
+}
+
+section.group2{
+	article{
+		margin-bottom: 3rem;
+	}
+	.product-content a{
+		display: inline-block;
+		margin: 1.25rem 0;
+		font-size: 1.3rem;
+		text-decoration: none;
+		color: black;
+	}
+	.product-content p{
+		font-size: 1.5rem;
+		}
+}
+
+@media only screen and(min-width: 700px){
+	section.group2{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 1rem;
+
+		.product-content .price{
+			font-size: 1.75rem;
+		}
+	}
+}
+@media only screen and(min-width: 989px){
+	section.group2{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+
+		a.cta{
+			position: relative;
+			width: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+footer{
+	padding: 5rem $padd-s;
+
+	h3{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.footer-subt{
+		font-weight: 200;
+
+	}
+	a{
+		display: block;
+		margin: 1.2rem 0;
+		text-decoration: none;
+		color: $light-text;
+		font-size: 0.88rem;
+	}
+}
+
+@media only screen and(min-width: 788px){
+	footer{
+		padding-left: $padd-m;
+		padding-right: $padd-m;
+		div.links-container{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}
+
+@media only screen and(min-width: 989px){
+	footer{
+		max-width: 1200px;
+		margin: 0 auto;
+		div.links-container{
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+
+div.image-wrap div.img-placement{
+	background-size: cover;
+    background-position: center;
+}
+
+article:nth-of-type(1) div.image-wrap div.img-placement{
+	background-image: url(../img/02_ZHA_Leeza_©HuftonCrow.jpg);
+}
+
+article:nth-of-type(2)div.image-wrap div.img-placement{
+	background-image: url(../img/estacion-de-bomberos-para-vitra-en-weil-am-rhein_891ce7d7_1500x930.jpg);
+}
+
+article:nth-of-type(3) div.image-wrap div.img-placement{
+	background-image: url(../img/centro-cultural-haydar-aliyev-zaha-hadid.jpg);
+}
+
+article:nth-of-type(4) div.image-wrap div.img-placement{
+	background-image: url(../img/zaha_hadid_last_building_ny.jpg);
+}
+
+section.spacing div{
+	background-position: center;
+	background-size: cover;
+}
+
+section.spacing div:nth-of-type(1){
+background-image: url(../img/nueva-sede-de-la-autoridad-portuaria-de-amberes_d71036d2_812x550.jpg);
+}
+section.spacing div:nth-of-type(2){
+	background-image: url(../img/la_muerte_de_zaha_hadid_y_la_salida_de_hedi_slimane_de_saint_laurent_3783.jpg);
+}
+section.spacing div:nth-of-type(3){
+	background-image: url(../img/Hadid-Cincinnati-Rosenthal-56a02b613df78cafdaa064e2.jpg);
+}
+section.spacing div:nth-of-type(4){
+	background-image: url(../img/estacion-de-bomberos-para-vitra-en-weil-am-rhein_891ce7d7_1500x930.jpg);
+}
+
+section.spacing div:nth-of-type(5){
+	background-image: url(../img/131031102519-zaha-hadid-horizontal-large-gallery.jpg);
+}
+section.spacing div:nth-of-type(6){
+	background-image: url(../img/08_ZHA_Leeza_©HuftonCrow-683x1024.jpg);
+}
