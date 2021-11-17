@@ -382,6 +382,7 @@ section.group2{
 }
 
 section.group3{
+	margin-bottom: 4rem;
 	.about-img{
 		width: 100%;
 		height: auto;
@@ -396,7 +397,7 @@ section.group3{
 	}
 }
 
-@media only screen and(min-width: 989px){
+@media only screen and(min-width: 700px){
 	.about-container{
 		display: grid;
 		grid-template-columns: repeat(6,1fr);
@@ -417,6 +418,8 @@ section.group3{
 			.subtext{
 				margin: 0;
 				font-size: 2rem;
+				padding: 1rem;
+				background-color: #ffffffa3;
 
 				.cta{
 					margin: 0;
@@ -429,6 +432,82 @@ section.group3{
 		}
 	}
 }
+
+
+section.group4{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.zaha-portrait{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.zaha-portrait img{
+		width: 100%;
+		height: auto;
+		max-width: 400px;
+	}
+
+	.zaha-content{
+		max-width: 50ch;
+		h2{
+			margin: 1rem 0;
+			font-size: 2rem;
+			text-align: center;
+		}
+		p{
+			line-height: 1.2;
+		}
+	}
+}
+
+@media only screen and(min-width: 788px){
+	section.group4{
+		max-width: 1200px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1rem;
+
+		.zaha-portrait img{
+			max-width: 100%;
+			max-width: -webkit-fill-available;
+		}
+
+		.zaha-content{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			max-width: -webkit-fill-available;
+			h2{
+				font-size: 2.5rem;
+				text-align: left;
+			}
+			p{
+				font-size: 1.3rem;
+				max-width: 42ch;
+			}
+		}
+	}
+
+
+}
+
+@media only screen and(min-width: 1100px){
+	section.group4{
+		.zaha-content{
+			h2{
+				font-size: 4rem;
+			}
+		}
+	}
+}
+
 
 footer{
 	padding: 5rem $padd-s;
@@ -471,7 +550,12 @@ footer{
 		}
 	}
 }
-
+@media only screen and(min-width: 1200px){
+	footer{
+		margin-top: 4rem;
+		padding: 0;
+	}
+}
 div.image-wrap div.img-placement{
 	background-size: cover;
     background-position: center;
